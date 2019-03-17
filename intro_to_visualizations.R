@@ -1,13 +1,16 @@
-library(ggplot2)# loading ggplot2 in the current session 
-mtcars#mtcars is an inbuilt dataset in R 
-View(mtcars)# viewing the dataset to get an idea of what is there inside the dataset
+library(ggplot2) # loading ggplot2 in the current session 
+mtcars #mtcars is an inbuilt dataset in R 
+View(mtcars) # viewing the dataset to get an idea of what is there inside the dataset
 dim(mtcars)
-names(mtcars)#gives the names of the columns
-head(mtcars)# you can use either head or View function to see the contents of the dataset, viewfn will give a complete view of the data set whereas head fn will show only the first five rows of the data set 
-tail(mtcars)# gives you the last 6 rows of the data set
+names(mtcars) #gives the names of the columns
+head(mtcars) # you can use either head or View function to see the contents of the dataset, viewfn will give a complete view of the data set whereas head fn will show only the first five rows of the data set 
+tail(mtcars) # gives you the last 6 rows of the data set
 summary(mtcars)# gives descriptive statistics(min, 1st Q, Median, Mean, 3rd Q, max))
+
 # mode is not a built-in R function, we calculate it for each using mode()
-str(mtcars)#structure of the data set 
+
+str(mtcars) #structure of the data set 
+
 mode_mpg=mode(mtcars$mpg)
 ----
   #historgram- A histogram is an accurate representation of the distribution of numerical data.
@@ -31,6 +34,7 @@ ggplot(mtcars, aes(cyl)) +
 ggplot(mtcars, aes(wt)) +
   geom_histogram(binwidth =1) + xlab('weight') + ylab('Number of Cars') + 
   ggtitle('Distribution of weight')
+
 # 2nd method
 plot(hist(mtcars$wt))
 ----
@@ -43,10 +47,12 @@ plot(hist(mtcars$wt))
   #The lower and upper quartiles are shown as horizontal lines either side of the rectangle.
   
 #boxplotting am vs MPG  
+
 ggplot(mtcars,aes(x= factor(am),y=mpg))+
   geom_boxplot()+
   xlab("transmission type (am)")+ylab("Miles per gallon (mpg)") +
 ggtitle("box plot showing tansmission type vs mpg")
+
 ## box plot it gives an indication that for Automatic transmission results in less Mpg
 ----
  
